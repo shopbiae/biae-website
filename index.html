@@ -2,119 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BIAÉ</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIAÉ | Luxury Swimwear & Lashes</title>
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: 'Georgia', serif;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, serif;
+      background: #fff7f7;
+      color: #111;
     }
 
-    body{
-      background:#fdf7f7;
-      color:#111;
+    header {
+      background: white;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.06);
     }
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:25px 60px;
-      background:white;
-      position:sticky;
-      top:0;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    .brand {
+      font-size: 34px;
+      letter-spacing: 8px;
+      font-weight: bold;
     }
 
-    .logo{
-      font-size:32px;
-      font-weight:bold;
-      letter-spacing:8px;
+    nav a {
+      margin-left: 22px;
+      color: #111;
+      text-decoration: none;
+      font-size: 15px;
     }
 
-    nav a{
-      margin-left:25px;
-      text-decoration:none;
-      color:black;
-      font-size:15px;
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: center;
+      gap: 40px;
+      padding: 70px 8%;
+      background: linear-gradient(135deg, #fff, #f9e8ec);
     }
 
-    .hero{
-      min-height:90vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:40px;
-      background:linear-gradient(to bottom,#fff,#f8eaea);
+    .hero h1 {
+      font-size: 75px;
+      letter-spacing: 8px;
+      margin-bottom: 18px;
     }
 
-    .hero-content h1{
-      font-size:90px;
-      color:#111;
-      margin-bottom:20px;
-      letter-spacing:10px;
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 18px;
     }
 
-    .hero-content p{
-      font-size:20px;
-      color:#555;
-      margin-bottom:30px;
+    .hero p {
+      color: #555;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 28px;
     }
 
-    .btn{
-      padding:15px 35px;
-      background:black;
-      color:white;
-      border:none;
-      border-radius:40px;
-      margin:10px;
-      cursor:pointer;
-      font-size:15px;
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      border-radius: 40px;
+      margin: 8px;
+      font-size: 15px;
     }
 
-    .section{
-      padding:100px 60px;
-      text-align:center;
+    .btn-light {
+      background: white;
+      color: #111;
+      border: 1px solid #111;
     }
 
-    .section h2{
-      font-size:50px;
-      margin-bottom:20px;
+    .logo-box {
+      background: #050505;
+      color: #d6b35a;
+      border-radius: 45px;
+      padding: 50px;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+      border: 1px solid #d6b35a;
     }
 
-    .products{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:30px;
-      margin-top:50px;
+    .monogram {
+      font-size: 120px;
+      line-height: 1;
+      font-weight: bold;
     }
 
-    .card{
-      background:white;
-      padding:40px;
-      border-radius:30px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    .logo-name {
+      font-size: 45px;
+      letter-spacing: 10px;
+      margin-top: 20px;
     }
 
-    .card h3{
-      margin-bottom:15px;
-      font-size:30px;
+    section {
+      padding: 80px 8%;
+      text-align: center;
     }
 
-    footer{
-      background:black;
-      color:white;
-      text-align:center;
-      padding:50px;
+    section h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
     }
 
-    footer h2{
-      margin-bottom:15px;
-      font-size:40px;
+    .section-sub {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 45px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 28px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .product-img {
+      height: 220px;
+      background: linear-gradient(135deg, #f7dce3, #fff);
+      border-radius: 24px;
+      margin-bottom: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 45px;
+    }
+
+    .card h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-size: 22px;
+      color: #111;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 19px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .contact {
+      background: #070707;
+      color: white;
+    }
+
+    .contact p {
+      color: #ddd;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    @media(max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 8px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
     }
   </style>
 </head>
@@ -122,54 +223,120 @@
 <body>
 
 <header>
-  <div class="logo">BIAÉ</div>
-
+  <div class="brand">BIAÉ</div>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#swim">Swimwear</a>
+    <a href="#lashes">Lashes</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
+<section class="hero" id="home">
+  <div>
     <h1>BIAÉ</h1>
-    <p>Luxury Swimwear & Lashes</p>
+    <h2>Luxury Looks For Every Island Girl</h2>
+    <p>
+      BIAÉ is a luxury beauty and fashion brand bringing you stylish swimwear,
+      soft glam lashes, and confident feminine energy.
+    </p>
+    <a class="btn" href="#swim">Shop Swimwear</a>
+    <a class="btn btn-light" href="#lashes">Shop Lashes</a>
+  </div>
 
-    <button class="btn">Shop Swimwear</button>
-    <button class="btn">Shop Lashes</button>
+  <div class="logo-box">
+    <div class="monogram">BA</div>
+    <div class="logo-name">BIAÉ</div>
+    <p style="margin-top:15px;color:#f3d98b;">Swim • Beauty • Soft Life</p>
   </div>
 </section>
 
-<section class="section">
-  <h2>Our Collections</h2>
+<section id="swim">
+  <h2>Swimwear Collection</h2>
+  <p class="section-sub">Luxury beach looks made to stand out.</p>
 
   <div class="products">
     <div class="card">
-      <h3>Swimwear</h3>
-      <p>Luxury bikinis made for confident island girls.</p>
+      <div class="product-img">👙</div>
+      <h3>Pink Bikini Set</h3>
+      <p>Soft feminine two-piece bikini for beach days and vacations.</p>
+      <div class="price">$35 USD</div>
+      <a class="btn" href="#contact">Order Now</a>
     </div>
 
     <div class="card">
-      <h3>Lashes</h3>
-      <p>Soft glam lashes designed for every look.</p>
+      <div class="product-img">🌊</div>
+      <h3>Island Babe Set</h3>
+      <p>Flattering swimwear for tropical trips and poolside looks.</p>
+      <div class="price">$40 USD</div>
+      <a class="btn" href="#contact">Order Now</a>
+    </div>
+
+    <div class="card">
+      <div class="product-img">✨</div>
+      <h3>Luxury Cover-Up</h3>
+      <p>Light, stylish cover-up to complete your beach outfit.</p>
+      <div class="price">$28 USD</div>
+      <a class="btn" href="#contact">Order Now</a>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <h2>About BIAÉ</h2>
+<section id="lashes">
+  <h2>Lash Collection</h2>
+  <p class="section-sub">Soft glam, wispy, and luxury lashes.</p>
 
-  <p style="max-width:700px;margin:auto;font-size:20px;color:#555;">
-    BIAÉ is a luxury beauty and fashion brand inspired by feminine elegance,
-    confidence, and tropical luxury.
+  <div class="products">
+    <div class="card">
+      <div class="product-img">👁️</div>
+      <h3>Soft Glam Lashes</h3>
+      <p>Perfect everyday lashes with a natural lifted look.</p>
+      <div class="price">$12 USD</div>
+      <a class="btn" href="#contact">Order Now</a>
+    </div>
+
+    <div class="card">
+      <div class="product-img">💋</div>
+      <h3>Wispy Doll Lashes</h3>
+      <p>Fluffy lashes for a pretty doll-eye finish.</p>
+      <div class="price">$14 USD</div>
+      <a class="btn" href="#contact">Order Now</a>
+    </div>
+
+    <div class="card">
+      <div class="product-img">👑</div>
+      <h3>Luxury Volume Lashes</h3>
+      <p>Bold glam lashes for nights out, birthdays, and photos.</p>
+      <div class="price">$16 USD</div>
+      <a class="btn" href="#contact">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <h2>About BIAÉ</h2>
+  <p>
+    BIAÉ was created for girls who love confidence, beauty, and soft-life luxury.
+    Our brand focuses on stylish swimwear and premium lashes that make you feel
+    beautiful, bold, and unforgettable.
   </p>
 </section>
 
+<section class="contact" id="contact">
+  <h2>Order From BIAÉ</h2>
+  <p>To place an order, message us on Instagram or WhatsApp.</p>
+
+  <a class="btn btn-light" href="https://instagram.com/shopbiae" target="_blank">
+    Instagram @shopbiae
+  </a>
+
+  <a class="btn btn-light" href="https://wa.me/" target="_blank">
+    WhatsApp Us
+  </a>
+</section>
+
 <footer>
-  <h2>BIAÉ</h2>
-  <p>Follow us on Instagram & TikTok</p>
+  © 2026 BIAÉ. Luxury Swimwear & Lashes.
 </footer>
 
 </body>
